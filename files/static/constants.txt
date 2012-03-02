@@ -1,0 +1,5 @@
+plugin.wtcart_orderpdf {
+	includepdf = EXT:wt_cart_orderpdf/files/templates/orderpdf.pdf
+
+	dir = fileadmin/wt_cart_orderpdf
+}
