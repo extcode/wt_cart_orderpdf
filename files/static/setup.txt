@@ -1,8 +1,19 @@
-plugin.tx_wtcart_orderpdf.settings {
+plugin.tx_wtcart_orderpdf.orderpdf {
 
-  include_file = {$plugin.wtcart_orderpdf.includepdf}
-  dir = {$plugin.wtcart_orderpdf.dir}
+  attach_sender_mail = 0
+  attach_recipient_mail = 1
 
+  include_file = {$plugin.wtcart_orderpdf.orderpdf.includepdf}
+  dir = {$plugin.wtcart_orderpdf.orderpdf.dir}
+
+  cart-position-x = {$plugin.wtcart_orderpdf.orderpdf.cart-position-x}
+  cart-position-y = {$plugin.wtcart_orderpdf.orderpdf.cart-position-y}
+  cart-width = {$plugin.wtcart_orderpdf.orderpdf.cart-width}
+  cart-height = {$plugin.wtcart_orderpdf.orderpdf.cart-height}
+
+
+  ordernumber-position-x = {$plugin.wtcart_orderpdf.orderpdf.ordernumber-position-x}
+  ordernumber-position-y = {$plugin.wtcart_orderpdf.orderpdf.ordernumber-position-y}
   ordernumber = COA
   ordernumber {
     20 = TEXT
@@ -16,5 +27,108 @@ plugin.tx_wtcart_orderpdf.settings {
 
     30 = TEXT
     30.value = {$plugin.wtcart.ordernumber.suffix}
+  }
+
+  # up to 5 lines
+  orderaddress-position-x = {$plugin.wtcart_orderpdf.orderpdf.orderaddress-position-x}
+  orderaddress-position-y = {$plugin.wtcart_orderpdf.orderpdf.orderaddress-position-y}
+  orderaddress = COA
+  orderaddress {
+    1 = COA
+    1 {
+      10 = TEXT
+      10.dataWrap = {TSFE:fe_user|sesData|powermail_6|uid6} {TSFE:fe_user|sesData|powermail_6|uid7}
+    }
+    2 = COA
+    2 {
+      10 = TEXT
+      10.data = TSFE:fe_user|sesData|powermail_6|uid8  
+    }
+    3 = COA
+    3 {
+      10 = TEXT
+      10.dataWrap = {TSFE:fe_user|sesData|powermail_6|uid10} {TSFE:fe_user|sesData|powermail_6|uid9}
+    }    
+  }
+
+  # up to 5 lines
+  shippingaddress-position-x = {$plugin.wtcart_orderpdf.orderpdf.shippingaddress-position-x}
+  shippingaddress-position-y = {$plugin.wtcart_orderpdf.orderpdf.shippingaddress-position-y}
+  shippingaddress = COA
+  shippingaddress {
+    0 = COA
+    0 {
+      10 = TEXT
+      10.value = Lieferaddresse
+    }
+    1 = COA
+    1 {
+      10 = TEXT
+      10.dataWrap = {TSFE:fe_user|sesData|powermail_6|uid6} {TSFE:fe_user|sesData|powermail_6|uid7}
+    }
+    2 = COA
+    2 {
+      10 = TEXT
+      10.data = TSFE:fe_user|sesData|powermail_6|uid8  
+    }
+    3 = COA
+    3 {
+      10 = TEXT
+      10.dataWrap = {TSFE:fe_user|sesData|powermail_6|uid10} {TSFE:fe_user|sesData|powermail_6|uid9}
+    }
+  }
+}
+
+plugin.tx_wtcart_orderpdf.packinglistpdf {
+
+  attach_sender_mail = 0
+  attach_recipient_mail = 1
+
+  include_file = {$plugin.wtcart_orderpdf.packinglistpdf.includepdf}
+  dir = {$plugin.wtcart_orderpdf.packinglistpdf.dir}
+
+  cart-position-x = {$plugin.wtcart_orderpdf.packinglistpdf.cart-position-x}
+  cart-position-y = {$plugin.wtcart_orderpdf.packinglistpdf.cart-position-y}
+  cart-width = {$plugin.wtcart_orderpdf.packinglistpdf.cart-width}
+  cart-height = {$plugin.wtcart_orderpdf.packinglistpdf.cart-height}
+
+
+  packinglistnumber-position-x = {$plugin.wtcart_orderpdf.packinglistpdf.packinglistnumber-position-x}
+  packinglistnumber-position-y = {$plugin.wtcart_orderpdf.packinglistpdf.packinglistnumber-position-y}
+  packinglistnumber = COA
+  packinglistnumber {
+    20 = TEXT
+    20.value = {$plugin.wtcart.packinglistnumber.prefix}
+
+    30 = TEXT
+    30.current = 1
+    30.setCurrent.field = packinglistnumber
+    30.setCurrent.wrap = | + {$plugin.wtcart.packinglistnumber.offset}
+    30.prioriCalc = intval
+
+    30 = TEXT
+    30.value = {$plugin.wtcart.packinglistnumber.suffix}
+  }
+
+  # up to 5 lines
+  shippingaddress-position-x = {$plugin.wtcart_orderpdf.packinglistpdf.shippingaddress-position-x}
+  shippingaddress-position-y = {$plugin.wtcart_orderpdf.packinglistpdf.shippingaddress-position-y}
+  shippingaddress = COA
+  shippingaddress {
+    1 = COA
+    1 {
+      10 = TEXT
+      10.dataWrap = {TSFE:fe_user|sesData|powermail_6|uid6} {TSFE:fe_user|sesData|powermail_6|uid7}
+    }
+    2 = COA
+    2 {
+      10 = TEXT
+      10.data = TSFE:fe_user|sesData|powermail_6|uid8  
+    }
+    3 = COA
+    3 {
+      10 = TEXT
+      10.dataWrap = {TSFE:fe_user|sesData|powermail_6|uid10} {TSFE:fe_user|sesData|powermail_6|uid9}
+    }    
   }
 }

@@ -1,5 +1,39 @@
 plugin.wtcart_orderpdf {
-	includepdf = EXT:wt_cart_orderpdf/files/templates/orderpdf.pdf
+	orderpdf {
+		includepdf = files/include.pdf
 
-	dir = fileadmin/wt_cart_orderpdf
+		dir = fileadmin/wt_cart_orderpdf
+
+		orderaddress-position-x = 20
+		orderaddress-position-y = 45
+
+		shippingaddress-position-x = 20
+		shippingaddress-position-y = 65
+
+		ordernumber-position-x = 25
+		ordernumber-position-y = 90
+
+		cart-position-x = 25
+		cart-position-y = 110
+		cart-width = 160
+		cart-height = 200
+	}
+
+	packinglistpdf {
+
+		includepdf = files/include.pdf
+
+		dir = fileadmin/wt_cart_packinglistpdf
+
+		shippingaddress-position-x = 20
+		shippingaddress-position-y = 45
+
+		packinglistnumber-position-x = 25
+		packinglistnumber-position-y = 90
+
+		cart-position-x = 25
+		cart-position-y = 110
+		cart-width = 160
+		cart-height = 200
+	}
 }
