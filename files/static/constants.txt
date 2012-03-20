@@ -1,8 +1,12 @@
 plugin.wtcart_orderpdf {
 	orderpdf {
-		includepdf = files/include.pdf
+		template = EXT:wt_cart_orderpdf/files/templates/cart_table.html
+
+		includepdf = typo3conf/ext/wt_cart_orderpdf/files/include.pdf
 
 		dir = fileadmin/wt_cart_orderpdf
+
+		abortonerror = 0;
 
 		orderaddress-position-x = 20
 		orderaddress-position-y = 45
@@ -10,25 +14,31 @@ plugin.wtcart_orderpdf {
 		shippingaddress-position-x = 20
 		shippingaddress-position-y = 65
 
-		ordernumber-position-x = 25
+		ordernumber-position-x = 20
 		ordernumber-position-y = 90
 
 		cart-position-x = 25
 		cart-position-y = 110
 		cart-width = 160
-		cart-height = 200
+		cart-height = 00
 	}
 
 	packinglistpdf {
-
-		includepdf = files/include.pdf
+		template = EXT:wt_cart_orderpdf/files/templates/cart_table.html
+		
+		includepdf = typo3conf/ext/wt_cart_orderpdf/files/include.pdf
 
 		dir = fileadmin/wt_cart_packinglistpdf
+
+		abortonerror = 0;
+
+		orderaddress-position-x = 20
+		orderaddress-position-y = 45
 
 		shippingaddress-position-x = 20
 		shippingaddress-position-y = 45
 
-		packinglistnumber-position-x = 25
+		packinglistnumber-position-x = 20
 		packinglistnumber-position-y = 90
 
 		cart-position-x = 25

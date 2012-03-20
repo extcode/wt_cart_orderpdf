@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for plugin &quot;tx_wtcart_pi1&quot;</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="wtcartorderpdf_ll_title">Title</label>
+			<label index="wtcartorderpdf_ll_sku">SKU</label>
+			<label index="wtcartorderpdf_ll_qty">#</label>
+			<label index="wtcartorderpdf_ll_price">Price</label>
+			<label index="wtcartorderpdf_ll_price_total">Total</label>
+			<label index="wtcartorderpdf_ll_tax">TAX</label>
+			<label index="wtcartorderpdf_ll_cart_net">Price (w/o tax)</label>
+			<label index="wtcartorderpdf_ll_gross_total">Price (w tax)</label>
+			<label index="wtcartorderpdf_ll_shipping">Shipping Options</label>
+			<label index="wtcartorderpdf_ll_payment">Service Options</label>
+			<label index="wtcartorderpdf_ll_special">Special Options</label>
+			<label index="wtcartorderpdf_ll_special_each">%s each</label>
+			<label index="wtcartorderpdf_ll_service_cost">Service- and Shipping costs</label>
+			<label index="wtcartorderpdf_ll_ordernumber">Order number</label>
+			<label index="wtcartorderpdf_ll_packinglistnumber">Packing List number</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="wtcartorderpdf_ll_title">Bezeichnung</label>
+			<label index="wtcartorderpdf_ll_sku">SKU</label>
+			<label index="wtcartorderpdf_ll_qty">#</label>
+			<label index="wtcartorderpdf_ll_price">Preis</label>
+			<label index="wtcartorderpdf_ll_price_total">Gesamt</label>
+			<label index="wtcartorderpdf_ll_tax">Mehrwertsteuer</label>
+			<label index="wtcartorderpdf_ll_cart_net">Gesamtsumme (netto)</label>
+			<label index="wtcartorderpdf_ll_gross_total">Gesamtsumme (brutto)</label>
+			<label index="wtcartorderpdf_ll_shipping">Versandoptionen</label>
+			<label index="wtcartorderpdf_ll_payment">Serviceoptionen</label>
+			<label index="wtcartorderpdf_ll_special">Spezialoptionen</label>
+			<label index="wtcartorderpdf_ll_special_each">je %s</label>
+			<label index="wtcartorderpdf_ll_service_cost">Service und Versandkosten</label>
+			<label index="wtcartorderpdf_ll_ordernumber">Bestellnummer</label>
+			<label index="wtcartorderpdf_ll_packinglistnumber">Lieferscheinnummer</label>
+		</languageKey>
+		<languageKey index="fr" type="array">
+			<label index="wtcartorderpdf_ll_title">Article</label>
+			<label index="wtcartorderpdf_ll_sku">SKU</label>
+			<label index="wtcartorderpdf_ll_qty">#</label>
+			<label index="wtcartorderpdf_ll_price">Prix unitaire</label>
+			<label index="wtcartorderpdf_ll_price_total">Total</label>
+			<label index="wtcartorderpdf_ll_tax">TVA</label>
+			<label index="wtcartorderpdf_ll_cart_net">Total (net)</label>
+			<label index="wtcartorderpdf_ll_gross_total">Total (brut)</label>
+			<label index="wtcartorderpdf_ll_shipping">Livraison</label>
+			<label index="wtcartorderpdf_ll_payment">Paiement</label>
+		</languageKey>
+	</data>
+</T3locallang>
