@@ -55,7 +55,7 @@ class user_wt_cart_orderpdf_hooks extends tslib_pibase {
 
 		$ordernumber = $GLOBALS['TSFE']->cObj->cObjGetSingle($this->conf['ordernumber'], $this->conf['ordernumber.']);
 		$packinglistnumber = $GLOBALS['TSFE']->cObj->cObjGetSingle($this->conf['packinglistnumber'], $this->conf['packinglistnumber.']);
-		
+
 		if (($params['subpart']=='recipient_mail') && ($this->wtcartorderconf['orderpdf.']['attach_recipient_mail'] == 1)) {
 			$this->conf = $this->wtcartorderconf['orderpdf.'];
 			$errorcnt += $this->renderOrderPdf($session, $ordernumber);
@@ -235,54 +235,18 @@ class user_wt_cart_orderpdf_hooks extends tslib_pibase {
 	}
 
 	private function renderOrderAddress(&$pdf) {
-		$orderaddress = "";
-
-		$orderaddress = "";
-		for ($line = 1; $line <= 5; $line++) {
-			if ($orderaddressrow = $GLOBALS['TSFE']->cObj->cObjGetSingle($this->conf['orderaddress.'][$line], $this->conf['orderaddress.'][$line.'.']))
-			{
-				$orderaddress .= $orderaddressrow . "\n";
-			}
-		}
+		$orderaddress = $GLOBALS['TSFE']->cObj->cObjGetSingle($this->conf['orderaddress'], $this->conf['orderaddress.']);
 		
 		if (!$orderaddress == "") {
-			if ($orderaddresstitle = $GLOBALS['TSFE']->cObj->cObjGetSingle($this->conf['orderaddress.']['0'], $this->conf['orderaddress.']['0.']))
-			{
-				$pdf->SetXY($this->conf['orderaddress-position-x'], intval($this->conf['orderaddress-position-y'])-4);
-				$pdf->SetFontSize(intval($this->conf['font-size'])-2);
-				$pdf->MultiCell(70, 4, $orderaddresstitle);
-				$pdf->SetFontSize($this->conf['font-size']);
-			}
-		
-			$pdf->SetXY($this->conf['orderaddress-position-x'], $this->conf['orderaddress-position-y']);
-
-			$pdf->MultiCell(70, 4, $orderaddress);
+			$pdf->writeHtmlCell(160, 0, $this->conf['orderaddress-position-x'], $this->conf['orderaddress-position-y'], $orderaddress);
 		}
 	}
 
 	private function renderShippingAddress(&$pdf, $fallback=false) {
-		$shippingaddress = "";
-
-		for ($line=1; $line<=5; $line++) {
-			if ($shippingaddressrow = $GLOBALS['TSFE']->cObj->cObjGetSingle($this->conf['shippingaddress.'][$line], $this->conf['shippingaddress.'][$line.'.']))
-			{
-				$shippingaddress .= $shippingaddressrow . "\n";
-			}
-			
-		}
+		$shippingaddress = $GLOBALS['TSFE']->cObj->cObjGetSingle($this->conf['shippingaddress'], $this->conf['shippingaddress.']);
 
 		if (!$shippingaddress == "") {
-			if ($shippingaddresstitle = $GLOBALS['TSFE']->cObj->cObjGetSingle($this->conf['shippingaddress.']['0'], $this->conf['shippingaddress.']['0.']))
-			{
-				$pdf->SetXY($this->conf['shippingaddress-position-x'], intval($this->conf['shippingaddress-position-y'])-4);
-				$pdf->SetFontSize(intval($this->conf['font-size'])-2);
-				$pdf->MultiCell(70, 4, $shippingaddresstitle);
-				$pdf->SetFontSize($this->conf['font-size']);
-			}
-
-			$pdf->SetXY($this->conf['shippingaddress-position-x'], $this->conf['shippingaddress-position-y']);
-
-			$pdf->MultiCell(70, 4, $shippingaddress);
+			$pdf->writeHtmlCell(160, 0, $this->conf['shippingaddress-position-x'], $this->conf['shippingaddress-position-y'], $shippingaddress);
 		} elseif ($fallback) {
 			$this->renderOrderAddress($pdf);
 		}
