@@ -236,8 +236,13 @@ class user_wt_cart_orderpdf_hooks extends tslib_pibase {
 
 	private function renderOrderAddress(&$pdf) {
 		$orderaddress = $GLOBALS['TSFE']->cObj->cObjGetSingle($this->conf['orderaddress'], $this->conf['orderaddress.']);
-		
+
 		if (!$orderaddress == "") {
+			$orderaddressheadline = $GLOBALS['TSFE']->cObj->cObjGetSingle($this->conf['orderaddress.']['0'], $this->conf['orderaddress.']['0.']);
+			if ($orderaddressheadline)
+			{
+				$orderaddress = $orderaddressheadline . $orderaddress;
+			}
 			$pdf->writeHtmlCell(160, 0, $this->conf['orderaddress-position-x'], $this->conf['orderaddress-position-y'], $orderaddress);
 		}
 	}
@@ -246,6 +251,11 @@ class user_wt_cart_orderpdf_hooks extends tslib_pibase {
 		$shippingaddress = $GLOBALS['TSFE']->cObj->cObjGetSingle($this->conf['shippingaddress'], $this->conf['shippingaddress.']);
 
 		if (!$shippingaddress == "") {
+			$shippingaddressheadline = $GLOBALS['TSFE']->cObj->cObjGetSingle($this->conf['shippingaddress.']['0'], $this->conf['shippingaddress.']['0.']);
+			if ($shippingaddressheadline)
+			{
+				$shippingaddress = $shippingaddressheadline . $shippingaddress;
+			}
 			$pdf->writeHtmlCell(160, 0, $this->conf['shippingaddress-position-x'], $this->conf['shippingaddress-position-y'], $shippingaddress);
 		} elseif ($fallback) {
 			$this->renderOrderAddress($pdf);
