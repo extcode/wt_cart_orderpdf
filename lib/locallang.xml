@@ -21,6 +21,12 @@
 			<label index="wtcartorderpdf_ll_service_cost">Service- and Shipping costs</label>
 			<label index="wtcartorderpdf_ll_ordernumber">Order number</label>
 			<label index="wtcartorderpdf_ll_packinglistnumber">Packing List number</label>
+			<label index="wtcartorderpdf.error.mailheader.orderpdf">wt_cart_orderpdf - Order PDF was not created</label>
+			<label index="wtcartorderpdf.error.mailheader.packinglistpdf">wt_cart_orderpdf - Packing List PDF was not created</label>
+			<label index="wtcartorderpdf.error.mailbody.cannotcreate">wt_cart_orderpdf cannot create the PDF.</label>
+			<label index="wtcartorderpdf.error.mailbody.dirnotfound">Directory wasn't found.</label>
+			<label index="wtcartorderpdf.error.mailbody.cannotwrite">Can not write to directory.</label>
+			<label index="wtcartorderpdf.error.mailbody.abord">Order was aborted.</label>
 		</languageKey>
 		<languageKey index="de" type="array">
 			<label index="wtcartorderpdf_ll_title">Bezeichnung</label>
@@ -38,6 +44,12 @@
 			<label index="wtcartorderpdf_ll_service_cost">Service und Versandkosten</label>
 			<label index="wtcartorderpdf_ll_ordernumber">Bestellnummer</label>
 			<label index="wtcartorderpdf_ll_packinglistnumber">Lieferscheinnummer</label>
+			<label index="wtcartorderpdf.error.mailheader.orderpdf">wt_cart_orderpdf - Rechnungs-PDF wurde nicht erzeugt</label>
+			<label index="wtcartorderpdf.error.mailheader.packinglistpdf">wt_cart_orderpdf - Lieferschein-PDF wurde nicht erzeugt</label>
+			<label index="wtcartorderpdf.error.mailbody.cannotcreate">wt_cart_orderpdf kann das PDF nicht erzeugen.</label>
+			<label index="wtcartorderpdf.error.mailbody.dirnotfound">Verzeichnis nicht gefunden.</label>
+			<label index="wtcartorderpdf.error.mailbody.cannotwrite">Verzeichnis nicht schreibbar.</label>
+			<label index="wtcartorderpdf.error.mailbody.abord">Bestellung wurde abgebrochen.</label>
 		</languageKey>
 		<languageKey index="fr" type="array">
 			<label index="wtcartorderpdf_ll_title">Article</label>

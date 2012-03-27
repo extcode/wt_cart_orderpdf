@@ -6,7 +6,7 @@ plugin.wtcart_orderpdf {
 
 		dir = fileadmin/wt_cart_orderpdf
 
-		abortonerror = 0;
+		abortonerror = 0
 
 		orderaddress-position-x = 20
 		orderaddress-position-y = 45
@@ -30,7 +30,7 @@ plugin.wtcart_orderpdf {
 
 		dir = fileadmin/wt_cart_packinglistpdf
 
-		abortonerror = 0;
+		abortonerror = 0
 
 		orderaddress-position-x = 20
 		orderaddress-position-y = 45

@@ -1,3 +1,11 @@
+plugin.tx_wtcart_orderpdf {
+  ordernumber < plugin.tx_wtcart_pi1.settings.overall.ordernumber
+  ordernumber.10 >
+  
+  packinglistnumber < plugin.tx_wtcart_pi1.settings.overall.packinglistnumber
+  packinglistnumber.10 >
+}
+
 plugin.tx_wtcart_orderpdf.orderpdf {
   font-size = 8
 
@@ -43,20 +51,7 @@ plugin.tx_wtcart_orderpdf.orderpdf {
 
   ordernumber-position-x = {$plugin.wtcart_orderpdf.orderpdf.ordernumber-position-x}
   ordernumber-position-y = {$plugin.wtcart_orderpdf.orderpdf.ordernumber-position-y}
-  ordernumber = COA
-  ordernumber {
-    20 = TEXT
-    20.value = {$plugin.wtcart.ordernumber.prefix}
 
-    30 = TEXT
-    30.current = 1
-    30.setCurrent.field = ordernumber
-    30.setCurrent.wrap = | + {$plugin.wtcart.ordernumber.offset}
-    30.prioriCalc = intval
-
-    30 = TEXT
-    30.value = {$plugin.wtcart.ordernumber.suffix}
-  }
 }
 
 plugin.tx_wtcart_orderpdf.packinglistpdf {
@@ -78,20 +73,6 @@ plugin.tx_wtcart_orderpdf.packinglistpdf {
 
   packinglistnumber-position-x = {$plugin.wtcart_orderpdf.packinglistpdf.packinglistnumber-position-x}
   packinglistnumber-position-y = {$plugin.wtcart_orderpdf.packinglistpdf.packinglistnumber-position-y}
-  packinglistnumber = COA
-  packinglistnumber {
-    20 = TEXT
-    20.value = {$plugin.wtcart.packinglistnumber.prefix}
-
-    30 = TEXT
-    30.current = 1
-    30.setCurrent.field = packinglistnumber
-    30.setCurrent.wrap = | + {$plugin.wtcart.packinglistnumber.offset}
-    30.prioriCalc = intval
-
-    30 = TEXT
-    30.value = {$plugin.wtcart.packinglistnumber.suffix}
-  }
 
   orderaddress-position-x = {$plugin.wtcart_orderpdf.packinglistpdf.orderaddress-position-x}
   orderaddress-position-y = {$plugin.wtcart_orderpdf.packinglistpdf.orderaddress-position-y}
